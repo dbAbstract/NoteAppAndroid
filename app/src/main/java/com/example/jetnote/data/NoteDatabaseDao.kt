@@ -2,26 +2,27 @@ package com.example.jetnote.data
 
 import androidx.room.*
 import com.example.jetnote.model.Note
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface NoteDatabaseDao {
 
     @Query("SELECT * FROM NOTES_TBL")
-    fun getNotes(): List<Note>
+    fun getNotes(): Flow<List<Note>>
 
     @Query("SELECT * FROM NOTES_TBL WHERE id =:id")
-    fun getNoteById(id: String): Note
+    suspend fun getNoteById(id: String): Note
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insert(note: Note)
+    suspend fun insert(note: Note)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    fun update(note: Note)
+    suspend fun update(note: Note)
 
     @Query("DELETE FROM NOTES_TBL")
-    fun deleteAll(): Unit
+    suspend fun deleteAll(): Unit
 
     @Delete
-    fun deleteNote(note: Note)
+    suspend fun deleteNote(note: Note)
 
 }
