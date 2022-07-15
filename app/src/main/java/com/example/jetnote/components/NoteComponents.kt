@@ -59,10 +59,10 @@ fun NoteRow(modifier: Modifier = Modifier, note: Note, onNoteClicked: (Note) -> 
             horizontalAlignment = Alignment.Start) {
             Text(text = note.title, style = MaterialTheme.typography.subtitle2)
             Text(text = note.desc, style = MaterialTheme.typography.subtitle1)
-            Text(
-                text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, MMM d")),
-                style = MaterialTheme.typography.caption
-            )
+//            Text(
+//                text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, MMM d")),
+//                style = MaterialTheme.typography.caption
+//            )
 
         }
     }
