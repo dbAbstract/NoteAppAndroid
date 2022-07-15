@@ -34,11 +34,9 @@ fun NoteButton(
         enabled = enabled,
         modifier = modifier) {
         Text(text = text)
-        
     }
     
 }
-
 
 @Composable
 fun NoteRow(modifier: Modifier = Modifier, note: Note, onNoteClicked: (Note) -> Unit ) {
@@ -67,8 +65,6 @@ fun NoteRow(modifier: Modifier = Modifier, note: Note, onNoteClicked: (Note) -> 
         }
     }
 }
-
-
 
 @OptIn(ExperimentalComposeUiApi::class)
 @Composable
