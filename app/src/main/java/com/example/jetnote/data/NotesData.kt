@@ -1,7 +1,7 @@
 package com.example.jetnote.data
 
-import com.example.jetnote.model.Note
 
+import com.example.jetnote.model.Note
 
 class NotesData {
     fun loadNotes(): List<Note> {
