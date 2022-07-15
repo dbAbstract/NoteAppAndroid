@@ -46,7 +46,9 @@ fun NoteRow(modifier: Modifier = Modifier, note: Note, onNoteClicked: (Note) -> 
             .clip(RoundedCornerShape(topEnd = 23.dp, bottomStart = 23.dp))
             .fillMaxWidth(),
         color = Color(0xFFDFE6EB),
-        elevation = 8.dp
+
+        elevation = 5.dp
+
     ) {
         Column(
             modifier
