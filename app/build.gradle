@@ -5,6 +5,7 @@ plugins {
     //Hilt
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
+
 }
 
 android {
@@ -59,6 +60,10 @@ dependencies {
     implementation("androidx.room:room-runtime:$roomVersion")
     annotationProcessor("androidx.room:room-compiler:$roomVersion")
 
+    // Kapt
+    kapt("androidx.room:room-compiler:2.4.2")
+    implementation "androidx.room:room-ktx:$roomVersion"
+            
     //coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.9")
 

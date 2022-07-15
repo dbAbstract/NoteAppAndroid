@@ -40,9 +40,10 @@ class NoteViewModel @Inject constructor(private val repository: NoteRepository) 
         }
     }
 
-    suspend fun addNote(note: Note) = viewModelScope.launch { repository.addNote(note) }
-    suspend fun removeNote(note: Note) = viewModelScope.launch { repository.deleteNote(note) }
+    // No need to suspend these functions because asynchronicity was handled in the Repository layer
+    fun addNote(note: Note) = viewModelScope.launch { repository.addNote(note) }
+    fun removeNote(note: Note) = viewModelScope.launch { repository.deleteNote(note) }
     fun getAllNotes() = viewModelScope.launch { repository.getAllNotes() }
-    suspend fun updateNote(note: Note) = viewModelScope.launch { repository.updateNote(note) }
+    fun updateNote(note: Note) = viewModelScope.launch { repository.updateNote(note) }
 
 }
