@@ -52,19 +52,6 @@ fun NotesApp(noteViewModel: NoteViewModel) {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
