@@ -19,6 +19,7 @@ import androidx.compose.ui.platform.LocalSoftwareKeyboardController
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.unit.dp
 import com.example.jetnote.model.Note
+import com.example.jetnote.util.formatDate
 import java.time.format.DateTimeFormatter
 
 @Composable
@@ -59,10 +60,10 @@ fun NoteRow(modifier: Modifier = Modifier, note: Note, onNoteClicked: (Note) -> 
             horizontalAlignment = Alignment.Start) {
             Text(text = note.title, style = MaterialTheme.typography.subtitle2)
             Text(text = note.desc, style = MaterialTheme.typography.subtitle1)
-//            Text(
-//                text = note.entryDate.format(DateTimeFormatter.ofPattern("EEE, MMM d")),
-//                style = MaterialTheme.typography.caption
-//            )
+            Text(
+                text = formatDate(note.entryDate.time),
+                style = MaterialTheme.typography.caption
+            )
 
         }
     }
